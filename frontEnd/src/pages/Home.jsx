@@ -83,28 +83,44 @@ const teamMembers = [
   return (
     <>
     <Header/>
-    <section 
-      className="relative  py-22  w-full h-screen flex items-center justify-center bg-cover bg-center" 
-      style={{ backgroundImage: "url('https://tophinhanhdep.com/wp-content/uploads/2021/10/Business-Wallpapers.jpg')" }}>
-      
-      {/* Dark Overlay */}
-      <div className="absolute inset-0  bg-opacity-50"></div>
+    <section className="relative w-full h-screen flex items-center justify-start pl-6 md:pl-20 overflow-hidden">
+  {/* Video Background */}
+  <video
+    autoPlay
+    muted
+    loop
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/Images/holding.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-      {/* Content Section */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-12 opacity-80">
-        <div className="bg-[#2C3E50] text-white p-6 md:p-10 rounded-lg shadow-lg md:w-2/3 ml-auto">
-          <h2 className="text-3xl font-semibold mb-4 border-b-2 border-white pb-2">About Us</h2>
-          <p className="text-lg mb-4">
-            Welcome to <span className="font-semibold">ProTasks Solution</span>, your trusted partner in transforming business 
-            efficiency through innovative outsourcing.
-          </p>
-          <p className="text-lg">
-            Join us on the journey to reimagine the future of outsourcing—driving growth, unlocking potential, 
-            and delivering exceptional value at every step.
-          </p>
-        </div>
-      </div>
-    </section>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0"></div>
+
+  {/* Content with Semi-Transparent Background */}
+  <div className="relative z-10 bg-white/70 p-6 md:p-10 rounded-lg shadow-lg max-w-2xl text-left">
+    <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-6 leading-tight">
+      ProTasks Solution Headline – <br />
+      <span className="text-[#002147]">Outsource Smart, Scale Faster, Succeed Together</span>
+    </h1>
+    <p className="text-lg md:text-xl font-bold text-black mb-8">
+      Accelerate Your Business Growth with Our Expert Lead Generation & Recruitment Solutions.
+    </p>
+    <a
+      href="https://calendly.com/nikhil-gehlot-protaskssolution"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-[#002147] hover:bg-[#00172f] text-white font-semibold py-3 px-6 rounded-full transition duration-300"
+    >
+      BOOK A FREE CONSULTATION
+    </a>
+  </div>
+</section>
+
+
+
+
 
     <section className="w-full bg-[#AAB4C3] pb-10">
       {/* Header Section */}
