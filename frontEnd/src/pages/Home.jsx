@@ -119,9 +119,6 @@ const teamMembers = [
 </section>
 
 
-
-
-
     <section className="w-full bg-[#AAB4C3] pb-10">
       {/* Header Section */}
       <div className="text-center py-12">
