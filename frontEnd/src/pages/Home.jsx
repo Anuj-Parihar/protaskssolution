@@ -101,14 +101,14 @@ const teamMembers = [
   {/* Content with Semi-Transparent Background */}
   <div className="relative z-10 bg-white/70 p-6 md:p-10 rounded-lg shadow-lg max-w-2xl text-left">
     <h1 className="text-4xl md:text-4xl font-extrabold text-black mb-6 leading-tight">
-      ProTasks Solution Headline – <br />
+     
       <span className="text-[#002147]">Outsource Smart, Scale Faster, Succeed Together</span>
     </h1>
     <p className="text-lg md:text-xl font-bold text-black mb-8">
       Accelerate Your Business Growth with Our Expert Lead Generation & Recruitment Solutions.
     </p>
     <a
-      href="https://calendly.com/nikhil-gehlot-protaskssolution"
+      href="https://calendly.com/nikhil-gehlot-protaskssolution/30min"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block bg-[#002147] hover:bg-[#00172f] text-white font-semibold py-3 px-6 rounded-full transition duration-300"
@@ -197,49 +197,9 @@ const teamMembers = [
 
 
 
-    <section className="w-full bg-[#AAB4C3] pb-10">
-      {/* Header Section */}
-
-      <div className="text-center py-12">
-        <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide relative inline-block">
-        DEDICATED TEAM OF PROTASKS SOLUTION
-          <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></span>
-        </h2>
-        <h3 className="text-xl text-[#002147] mt-2 italic font-light">
-          TOGETHER WE GROW, TOGETHER WE SUCCEED
-        </h3>
-      </div>
-
-      {/* Team Cards Section */}
-      <div className="flex flex-wrap justify-center gap-6 px-6">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="bg-gradient-to-b from-[#002147] to-[#3A5F91] text-white p-6 rounded-lg w-72 shadow-lg"
-          >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-32 h-32 rounded-md mx-auto mb-4"
-            />
-            <h3 className="font-bold text-lg text-center">{member.name}</h3>
-            <p className="text-sm text-[#F4A261] text-center">{member.role}</p>
-            <hr className="border-t border-gray-300 my-3" />
-            <p className="text-sm">{member.description}</p>
-
-            {/* LinkedIn Icon */}
-            <div className="flex justify-center mt-4">
-              <a href="#" className="text-gray-400 hover:text-[#E5A24A]">
-                <FaLinkedin className="text-white text-2xl hover:text-[#E5A24A] transition duration-300" />
-                </a>
-            </div>
-          </div>
-        ))}
-      </div>
+    
 
     <ClientTestimonials/>
-
-    </section>
     <Footer/>
     </>
   );

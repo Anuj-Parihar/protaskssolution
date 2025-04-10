@@ -116,7 +116,6 @@
 // };
 
 // export default ContactUs;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
@@ -140,7 +139,10 @@ const ContactUs = () => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
-  const API_KEY = "NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKROZEOUhkZ1g4RTk1MlJlaA=="; // Replace this with your actual API key
+  const [selectedCountryCode, setSelectedCountryCode] = useState("");
+  const [selectedStateCode, setSelectedStateCode] = useState("");
+
+  const API_KEY = ""; // Replace with your actual key
 
   useEffect(() => {
     axios
@@ -152,9 +154,9 @@ const ContactUs = () => {
   }, []);
 
   useEffect(() => {
-    if (formData.country) {
+    if (selectedCountryCode) {
       axios
-        .get(`https://api.countrystatecity.in/v1/countries/${formData.country}/states`, {
+        .get(`https://api.countrystatecity.in/v1/countries/${selectedCountryCode}/states`, {
           headers: { "X-CSCAPI-KEY": API_KEY },
         })
         .then((res) => setStates(res.data))
@@ -162,26 +164,50 @@ const ContactUs = () => {
     } else {
       setStates([]);
     }
+    setSelectedStateCode("");
+    setCities([]);
     setFormData((prev) => ({ ...prev, state: "", city: "" }));
-  }, [formData.country]);
+  }, [selectedCountryCode]);
 
   useEffect(() => {
-    if (formData.country && formData.state) {
+    if (selectedCountryCode && selectedStateCode) {
       axios
-        .get(`https://api.countrystatecity.in/v1/countries/${formData.country}/states/${formData.state}/cities`, {
-          headers: { "X-CSCAPI-KEY": API_KEY },
-        })
+        .get(
+          `https://api.countrystatecity.in/v1/countries/${selectedCountryCode}/states/${selectedStateCode}/cities`,
+          {
+            headers: { "X-CSCAPI-KEY": API_KEY },
+          }
+        )
         .then((res) => setCities(res.data))
         .catch((err) => console.error("Error loading cities", err));
     } else {
       setCities([]);
     }
     setFormData((prev) => ({ ...prev, city: "" }));
-  }, [formData.state]);
+  }, [selectedStateCode]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCountryChange = (e) => {
+    const code = e.target.value;
+    setSelectedCountryCode(code);
+    const countryObj = countries.find((c) => c.iso2 === code);
+    setFormData((prev) => ({ ...prev, country: countryObj?.name || "" }));
+  };
+
+  const handleStateChange = (e) => {
+    const code = e.target.value;
+    setSelectedStateCode(code);
+    const stateObj = states.find((s) => s.iso2 === code);
+    setFormData((prev) => ({ ...prev, state: stateObj?.name || "" }));
+  };
+
+  const handleCityChange = (e) => {
+    const name = e.target.value;
+    setFormData((prev) => ({ ...prev, city: name }));
   };
 
   const handleSubmit = async (e) => {
@@ -200,6 +226,8 @@ const ContactUs = () => {
           service: "",
           message: "",
         });
+        setSelectedCountryCode("");
+        setSelectedStateCode("");
         setTimeout(() => setSuccessMessage(""), 5000);
       }
     } catch (err) {
@@ -237,7 +265,7 @@ const ContactUs = () => {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Phone Numner"
+                  placeholder="Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -257,9 +285,8 @@ const ContactUs = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <select
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
+                  value={selectedCountryCode}
+                  onChange={handleCountryChange}
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0B3159]"
                 >
@@ -272,9 +299,8 @@ const ContactUs = () => {
                 </select>
 
                 <select
-                  name="state"
-                  value={formData.state}
-                  onChange={handleChange}
+                  value={selectedStateCode}
+                  onChange={handleStateChange}
                   required
                   disabled={!states.length}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0B3159]"
@@ -288,9 +314,8 @@ const ContactUs = () => {
                 </select>
 
                 <select
-                  name="city"
                   value={formData.city}
-                  onChange={handleChange}
+                  onChange={handleCityChange}
                   required
                   disabled={!cities.length}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0B3159]"
@@ -360,7 +385,7 @@ const ContactUs = () => {
               <div>
                 <h3 className="text-lg font-semibold">Our Location</h3>
                 <p>
-                  <strong>Registered Address:</strong> E-96, Road No-1 MIA Madri, Riico Near BMW
+                   E-96, Road No-1 MIA Madri, Riico Near BMW
                   Showroom Udaipur, Rajasthan 313001
                 </p>
               </div>

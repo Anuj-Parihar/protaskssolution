@@ -20,6 +20,14 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+router.get('/', async (req, res) => {
+  try {
+    const responses = await Response.find().sort({ createdAt: -1 });
+    res.json(responses);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
   
 
