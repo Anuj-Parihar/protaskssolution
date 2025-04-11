@@ -142,7 +142,7 @@ const Response = () => {
         </h2>
 
         {/* TABLE VIEW */}
-        <div className="hidden md:block overflow-x-auto">
+        <div className="hidden md:block ">
           <table className="w-full border-collapse border border-gray-300 bg-white shadow-md">
             <thead className="bg-[#0B3159] text-white">
               <tr className="text-sm lg:text-base">

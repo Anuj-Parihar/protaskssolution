@@ -161,7 +161,7 @@ const AdminHome = () => {
           Admin Dashboard
         </h2>
         <h3 className="text-2xl font-semibold text-[#0B3159] mb-4">
-          Latest 5 Responses
+          Top Responses
         </h3>
 
         {/* TABLE FOR DESKTOP */}
