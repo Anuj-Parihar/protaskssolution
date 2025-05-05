@@ -56,34 +56,34 @@ const TestimonialsSection = () => {
   );
 };
 
-const AppointmentSection = () => {
-  return (
-    <section className="w-full bg-[#AAB4C3] pb-10">
+// const AppointmentSection = () => {
+//   return (
+//     <section className="w-full bg-[#AAB4C3] pb-10">
       
-      <div className="text-center py-12">
-        <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide relative inline-block">
-        BOOK AN APPOINTMENT
-          <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></span>
-        </h2>
-      </div>
+//       <div className="text-center py-12">
+//         <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide relative inline-block">
+//         BOOK AN APPOINTMENT
+//           <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></span>
+//         </h2>
+//       </div>
 
-      {/* Google Map */}
-      <div className="flex justify-center px-6">
-      <iframe
-          title="Google Map"
-          className="w-full h-96 rounded-xl shadow-lg"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.402023134175!2d73.74652997565573!3d24.575318178116518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e8aadf75bad9%3A0xb153620439a53b6c!2sEqra%20International!5e0!3m2!1sen!2sin!4v1740311752139!5m2!1sen!2sin" allowFullScreen
-          loading="lazy"></iframe>
-      </div>
-    </section>
-  );
-};
+//       {/* Google Map */}
+//       <div className="flex justify-center px-6">
+//       <iframe
+//           title="Google Map"
+//           className="w-full h-96 rounded-xl shadow-lg"
+//           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.402023134175!2d73.74652997565573!3d24.575318178116518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e8aadf75bad9%3A0xb153620439a53b6c!2sEqra%20International!5e0!3m2!1sen!2sin!4v1740311752139!5m2!1sen!2sin" allowFullScreen
+//           loading="lazy"></iframe>
+//       </div>
+//     </section>
+//   );
+// };
 
 const ClientTestimonials = () => {
   return (
     <>
       <TestimonialsSection />
-      <AppointmentSection />
+      {/* <AppointmentSection /> */}
     </>
   );
 };

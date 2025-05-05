@@ -64,6 +64,7 @@ import Login from "./AdminPannel/Login";
 import PageNotFound from "./components/PageNotFound";
 import AdminHome from "./AdminPannel/AdminHome";
 import Settings from "./AdminPannel/Settings";
+import ServiceDetail from "./pages/ServiceDetail";
 
 function App() {
   return (
@@ -73,14 +74,15 @@ function App() {
           {/* Standard Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/service/:serviceKey" element={<EachService />} />
+          {/* <Route path="/service/:serviceKey" element={<EachService />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/admin-login" element={<Login />} />
           <Route path="/response" element={<Response />} />
           <Route path="/admin-home" element={<AdminHome />} />
           <Route path="/admin-settings" element={<Settings />} />
-          
+          <Route path="/service/:serviceKey" element={<ServiceDetail />} />
+
           {/* 404 Page Not Found */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
