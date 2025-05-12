@@ -62,11 +62,15 @@
 // };
 
 // export default Services;
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import AppointmentSection from '../components/AppointmentSection';
+import {
+ FaWhatsapp,
+  FaEnvelope, FaPhone, FaPlus, FaTimes
+} from "react-icons/fa";
 const services = [
   {
     title: "Recruitment Services",
@@ -92,7 +96,41 @@ const services = [
 
 const Services = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [counters, setCounters] = useState({
+      leads: 0,
+      clients: 0,
+      savings: 0,
+      successRate: 0,
+    });
+      const [activeIndex, setActiveIndex] = useState(null);
+   useEffect(() => {
+      const targets = { leads: 10000, clients: 15, savings: 70, successRate: 95 };
+      const speed = 80;
+  
+      const interval = setInterval(() => {
+        setCounters((prev) => ({
+          leads: Math.min(prev.leads + 250, targets.leads),
+          clients: Math.min(prev.clients + 1, targets.clients),
+          savings: Math.min(prev.savings + 2, targets.savings),
+          successRate: Math.min(prev.successRate + 3, targets.successRate),
+        }));
+        if (
+        counters.leads >= targets.leads &&
+        counters.clients >= targets.clients &&
+        counters.savings >= targets.savings &&
+        counters.successRate >= targets.successRate
+      ) {
+        clearInterval(interval);
+      }
+    }, speed);
 
+    return () => clearInterval(interval);
+  }, [counters]);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
   return (
     <>
       <Header />
@@ -127,7 +165,48 @@ const Services = () => {
           ))}
         </div>
       </section>
+      <section>
+        <div className="flex flex-wrap justify-center gap-10  text-white text-center bg-[#3A5F91]  py-6">
+          {[
+            { count: counters.leads.toLocaleString(), label: "LEADS GENERATED" },
+            { count: counters.clients, label: "HAPPY CLIENTS" },
+            { count: `${counters.savings}%`, label: "SAVE UPTO" },
+            { count: `${counters.successRate}%`, label: "SUCCESS RATE" },
+          ].map((stat, idx) => (
+            <div key={idx}>
+              <h3 className="text-xl font-bold">{stat.count}+</h3>
+              <p className="text-sm">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <AppointmentSection/>
       <Footer />
+
+      {/* Floating Action Button */}
+            <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+              {isOpen && (
+                <div className="flex flex-col items-end gap-3">
+                  <a href="https://wa.me/your-number" target="_blank" className="bg-green-500 p-3 rounded-full text-white shadow-lg hover:bg-green-600 transition">
+                    <FaWhatsapp size={20} />
+                  </a>
+                  <a href="mailto:your@email.com" className="bg-blue-500 p-3 rounded-full text-white shadow-lg hover:bg-blue-600 transition">
+                    <FaEnvelope size={20} />
+                  </a>
+                  <a href="tel:+1234567890" className="bg-red-500 p-3 rounded-full text-white shadow-lg hover:bg-red-600 transition">
+                    <FaPhone size={20} />
+                  </a>
+                </div>
+              )}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="bg-[#002147] text-white p-4 rounded-full shadow-lg hover:bg-[#00172f] transition"
+              >
+                {isOpen ? <FaTimes size={20} /> : <FaPlus size={20} />}
+              </button>
+            </div>
+
     </>
   );
 };

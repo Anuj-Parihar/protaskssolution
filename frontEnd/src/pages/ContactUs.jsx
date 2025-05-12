@@ -1,4 +1,3 @@
-
 // export default ContactUs;
 
 // import React, { useEffect, useState } from "react";
@@ -315,11 +314,9 @@
 
 // export default ContactUs;
 
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,  FaWhatsapp, FaPhone, FaPlus, FaTimes } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -343,6 +340,7 @@ const ContactUs = () => {
   const [selectedCountryCode, setSelectedCountryCode] = useState("");
   const [selectedStateCode, setSelectedStateCode] = useState("");
 
+  const [isOpen, setIsOpen] = useState(false);
   const API_KEY = ""; // Replace with your actual key
 
   useEffect(() => {
@@ -357,9 +355,12 @@ const ContactUs = () => {
   useEffect(() => {
     if (selectedCountryCode) {
       axios
-        .get(`https://api.countrystatecity.in/v1/countries/${selectedCountryCode}/states`, {
-          headers: { "X-CSCAPI-KEY": API_KEY },
-        })
+        .get(
+          `https://api.countrystatecity.in/v1/countries/${selectedCountryCode}/states`,
+          {
+            headers: { "X-CSCAPI-KEY": API_KEY },
+          }
+        )
         .then((res) => setStates(res.data))
         .catch((err) => console.error("Error loading states", err));
     } else {
@@ -385,7 +386,7 @@ const ContactUs = () => {
       setCities([]);
     }
     setFormData((prev) => ({ ...prev, city: "" }));
-  }, [selectedCountryCode, selectedStateCode]);  
+  }, [selectedCountryCode, selectedStateCode]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -414,7 +415,10 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/contact", formData);
+      const res = await axios.post(
+        "http://localhost:5000/api/contact",
+        formData
+      );
       if (res.status === 201) {
         setSuccessMessage("Response submitted successfully!");
         setFormData({
@@ -442,10 +446,13 @@ const ContactUs = () => {
       <Header />
       <section className="bg-[#0B3159] py-20 px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white uppercase">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white uppercase">
+            Contact Us
+          </h2>
           <div className="w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></div>
           <h2 className="text-3xl md:text-3xl font-semibold text-white pt-10">
-            Let’s discuss how we can help grow your business through smart outsourcing.
+            Let’s discuss how we can help grow your business through smart
+            outsourcing.
           </h2>
         </div>
 
@@ -453,7 +460,9 @@ const ContactUs = () => {
           {/* Contact Form */}
           <div className="bg-white p-6 rounded-xl shadow-md">
             {successMessage && (
-              <p className="text-green-600 text-center mb-4">{successMessage}</p>
+              <p className="text-green-600 text-center mb-4">
+                {successMessage}
+              </p>
             )}
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -542,7 +551,9 @@ const ContactUs = () => {
               >
                 <option value="">Select Service</option>
                 <option value="recruitment">Recruitment Services</option>
-                <option value="business-development">Business Development</option>
+                <option value="business-development">
+                  Business Development
+                </option>
                 <option value="ecommerce">E-commerce Services</option>
                 <option value="virtual-assistant">Virtual Assistant</option>
               </select>
@@ -600,7 +611,8 @@ const ContactUs = () => {
               <div>
                 <h3 className="text-lg font-semibold">Our Location</h3>
                 <p>
-                  E-96, Road No-1 MIA Madri, Riico Near BMW Showroom<br /> Udaipur, Rajasthan 313001
+                  E-96, Road No-1 MIA Madri, Riico Near BMW Showroom
+                  <br /> Udaipur, Rajasthan 313001
                 </p>
               </div>
             </a>
@@ -619,6 +631,39 @@ const ContactUs = () => {
         </div>
       </section>
       <Footer />
+
+      {/* Floating Action Button */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        {isOpen && (
+          <div className="flex flex-col items-end gap-3">
+            <a
+              href="https://wa.me/your-number"
+              target="_blank"
+              className="bg-green-500 p-3 rounded-full text-white shadow-lg hover:bg-green-600 transition"
+            >
+              <FaWhatsapp size={20} />
+            </a>
+            <a
+              href="mailto:your@email.com"
+              className="bg-blue-500 p-3 rounded-full text-white shadow-lg hover:bg-blue-600 transition"
+            >
+              <FaEnvelope size={20} />
+            </a>
+            <a
+              href="tel:+1234567890"
+              className="bg-red-500 p-3 rounded-full text-white shadow-lg hover:bg-red-600 transition"
+            >
+              <FaPhone size={20} />
+            </a>
+          </div>
+        )}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-[#002147] text-white p-4 rounded-full shadow-lg hover:bg-[#00172f] transition"
+        >
+          {isOpen ? <FaTimes size={20} /> : <FaPlus size={20} />}
+        </button>
+      </div>
     </>
   );
 };
