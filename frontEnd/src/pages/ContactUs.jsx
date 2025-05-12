@@ -341,7 +341,7 @@ const ContactUs = () => {
   const [selectedStateCode, setSelectedStateCode] = useState("");
 
   const [isOpen, setIsOpen] = useState(false);
-  const API_KEY = "dGVUdlNJNVQzd0Y3dUwzTnphdGlnQ1FwRzBWeUZUWmFqSUxBSkNFUA=="; // Replace with your actual key
+  const API_KEY = ""; // Replace with your actual key
 
   useEffect(() => {
     axios
