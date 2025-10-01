@@ -23,7 +23,6 @@ const testimonials = [
       "ProTasks is a great company to work with. They delivered our project with the highest quality and in a timely manner. Highly recommend ProTasks Solution for their exceptional service and professionalism.",
   },
 ];
-
 const TestimonialsSection = () => {
   return (
     <section className="w-full bg-[#AAB4C3] pb-10">

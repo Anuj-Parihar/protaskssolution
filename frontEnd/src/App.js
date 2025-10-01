@@ -53,10 +53,11 @@
 
 // export default App;
 
-import { Routes, Route,  } from "react-router-dom"; 
+import { Routes, Route, useLocation } from "react-router-dom"; 
+import { useEffect } from "react";
 import Home from "./pages/Home";
 import Services from './pages/Services';
-import EachService from './pages/EachService';
+// import EachService from './pages/EachService';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
 import Response from "./AdminPannel/Response";
@@ -67,6 +68,13 @@ import Settings from "./AdminPannel/Settings";
 import ServiceDetail from "./pages/ServiceDetail";
 
 function App() {
+  const location = useLocation();
+
+  // ✅ Scroll to top whenever route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       <div className="">

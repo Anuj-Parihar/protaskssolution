@@ -150,16 +150,16 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#E5A24A] focus:outline-none text-2xl"
+            className="md:hidden text-[#000000] focus:outline-none text-2xl"
           >
-            {isOpen ? "✖" : "☰"}
+            {isOpen ? "X" : "☰"}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#0B3159] border-t border-[#E5A24A]">
+        <div className="md:hidden bg-[#ffffff] border-t border-[#000000]">
           {["/", "/services", "/about", "/contact"].map((path, idx) => {
             const labels = ["Home", "Our Services", "About Us", "Contact Us"];
             return (
@@ -168,8 +168,8 @@ const Header = () => {
                 to={path}
                 className={`block px-6 py-3 transition duration-300 ${
                   isActive(path)
-                    ? "text-white bg-[#E5A24A] font-semibold"
-                    : "text-[#E5A24A] hover:bg-[#E5A24A] hover:text-[#0B3159]"
+                    ? "text-white bg-[#000000] font-semibold"
+                    : "text-[#000000] hover:bg-[#E5A24A] hover:text-[#0B3159]"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
