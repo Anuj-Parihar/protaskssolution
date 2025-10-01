@@ -73,14 +73,14 @@ import {
 } from "react-icons/fa";
 const services = [
   {
-    title: "Recruitment Services",
-    key: "RecruitmentServices",
-    image: "https://protaskssolution.com/wp-content/uploads/2022/04/Rec5.jpg",
-  },
-  {
     title: "Business Development",
     key: "BusinessDevelopment",
     image: "https://protaskssolution.com/wp-content/uploads/2022/04/BD1.jpg",
+  },
+  {
+    title: "Recruitment Services",
+    key: "RecruitmentServices",
+    image: "https://protaskssolution.com/wp-content/uploads/2022/04/Rec5.jpg",
   },
   // {
   //   title: "E-commerce Services",
@@ -139,7 +139,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-wide">
             Our Services
           </h2>
-          <div className="w-20 h-1 bg-[#E5A24A] mx-auto mt-4 rounded-full"></div>
+          <div className="w-20 h-1 bg-[#ffffff] mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div className=" pl-93  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8">

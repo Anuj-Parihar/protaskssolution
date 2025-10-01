@@ -326,7 +326,7 @@ const Home = () => {
         <div className="text-center py-12">
           <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide relative inline-block">
             OUR SERVICES
-            <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></span>
+            <span className="block w-16 h-1 bg-[#002147] mx-auto mt-2"></span>
           </h2>
           <h3 className="text-xl text-[#002147] mt-2 italic font-light">
             TOGETHER WE GROW, TOGETHER WE SUCCEED
@@ -335,13 +335,13 @@ const Home = () => {
 
         <div className="flex flex-wrap justify-center gap-6 px-6">
           {[
-            { icon: <FaUserTie />, title: "RECRUITMENT SERVICES", desc: "ProTasks Solution provides end-to-end recruitment support, ensuring you find the right talent quickly and efficiently." },
             { icon: <FaChartLine />, title: "BUSINESS DEVELOPMENT", desc: "We drive business growth by identifying market opportunities and forming strategic partnerships." },
-            { icon: <FaShoppingCart />, title: "E-COMMERCE SERVICES", desc: "ProTasks Solution provides end-to-end eCommerce support, improving sales performance and customer satisfaction." },
-            { icon: <FaHeadset />, title: "VIRTUAL ASSISTANT", desc: "Our Virtual Assistants handle emails, scheduling, data entry, and customer support to streamline operations." },
+            { icon: <FaUserTie />, title: "RECRUITMENT SERVICES", desc: "ProTasks Solution provides end-to-end recruitment support, ensuring you find the right talent quickly and efficiently." },
+            // { icon: <FaShoppingCart />, title: "E-COMMERCE SERVICES", desc: "ProTasks Solution provides end-to-end eCommerce support, improving sales performance and customer satisfaction." },
+            // { icon: <FaHeadset />, title: "VIRTUAL ASSISTANT", desc: "Our Virtual Assistants handle emails, scheduling, data entry, and customer support to streamline operations." },
           ].map((service, idx) => (
-            <div key={idx} className="bg-gradient-to-b from-[#002147] to-[#3A5F91] text-white p-6 rounded-lg w-72 shadow-lg text-center">
-              <div className="text-[#E5A24A] text-4xl mx-auto mb-4">{service.icon}</div>
+            <div key={idx} className="bg-gradient-to-b from-[#002147] to-[#3A5F91] text-white p-8 rounded-lg w-100 shadow-lg text-center">
+              <div className="text-[#ffffff] text-4xl mx-auto mb-4">{service.icon}</div>
               <h3 className="font-bold text-lg">{service.title}</h3>
               <p className="text-sm mt-2">{service.desc}</p>
             </div>
@@ -353,7 +353,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide mb-2">
             Our Industry Focus
           </h2>
-          <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mb-6"></span>
+          <span className="block w-16 h-1 bg-[#002147] mx-auto mb-6"></span>
 
           <div className="relative overflow-hidden w-full py-6">
             <div className="whitespace-nowrap flex animate-scroll-logo gap-8 hover:[animation-play-state:paused] px-8">
@@ -409,7 +409,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-[#002147] uppercase tracking-wide">
             Why Choose ProTasks Solution?
           </h2>
-          <span className="block w-16 h-1 bg-[#E5A24A] mx-auto mt-4"></span>
+          <span className="block w-16 h-1 bg-[#002147] mx-auto mt-4"></span>
         </div>
         <div className="max-w-4xl mx-auto space-y-4">
           {[

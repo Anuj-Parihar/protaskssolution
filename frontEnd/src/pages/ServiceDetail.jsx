@@ -77,30 +77,28 @@ const ServiceDetail = () => {
   const headingMap = {
     BusinessDevelopment: "Business Development",
     RecruitmentServices: "Recruitment Process Outsourcing (RPO) Services",
-    EcommerceServices: "E-commerce Services",
-    VirtualAssistant: "Virtual Assistant Services",
   };
 
   return (
     <>
       <Header />
-      <section className="bg-white py-20  px-4 sm:px-8 md:px-12">
+      <section className="bg-[#0B3159] py-20  px-4 sm:px-8 md:px-12">
         <div className="max-w-6xl mx-auto space-y-10">
           
           {/* Title */}
-          <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-[#0B3159] leading-snug">
+          <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-white leading-snug">
             {headingMap[serviceKey] || serviceKey.replace(/([A-Z])/g, ' $1').trim()}
           </h2>
 
           {/* Description */}
-          <p className="text-center max-w-3xl mx-auto text-gray-700 text-base sm:text-lg leading-relaxed">
+          <p className="text-center max-w-3xl mx-auto text-white text-base sm:text-lg leading-relaxed">
             {service.description}
           </p>
 
           {/* Key Features */}
-          <div className="bg-gray-50 rounded-xl p-6 sm:p-10 shadow-md">
-            <h3 className="text-2xl font-semibold text-[#E5A24A] mb-5">Key Features</h3>
-            <ul className="space-y-4 list-disc pl-5 sm:pl-6 text-gray-800 text-base sm:text-lg">
+          <div className="bg-[#AAB4C3] rounded-xl p-6 sm:p-10 shadow-md">
+            <h3 className="text-2xl font-semibold text-[#000000] mb-5">Key Features</h3>
+            <ul className="space-y-4 list-disc pl-5 sm:pl-6 text-black text-base sm:text-lg">
               {service.features.map((feature, i) => (
                 <li key={i}>{feature}</li>
               ))}
@@ -113,7 +111,7 @@ const ServiceDetail = () => {
               href="https://calendly.com/nikhil-gehlot-protaskssolution/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#E5A24A] text-white text-lg font-semibold rounded-full shadow-lg hover:bg-[#d38b2b] hover:scale-105 transition-transform duration-300 animate-bounce"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#ffffff] text-black text-lg font-semibold rounded-full shadow-lg hover:bg-[#000000] hover:text-[#ffffff] hover:scale-105 transition-transform duration-300 animate-bounce"
             >
               📅 Book a Free Consultation
             </a>

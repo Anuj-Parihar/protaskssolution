@@ -79,6 +79,9 @@
 // export default About;
 
 import React, { useState } from "react";
+import nikhil from "../assets/logos/NikhilPhoto.jpg";
+
+
 import {
   FaLinkedin,
   FaWhatsapp,
@@ -123,7 +126,7 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-4">
               Welcome at ProTasks Solution
             </h2>
-            <div className="w-20 h-1 bg-[#E5A24A] mb-6"></div>
+            <div className="w-20 h-1 bg-white mb-6"></div>
             <p className="text-gray-200 leading-relaxed text-lg">
               At <strong>ProTasks Solution</strong>, we go beyond traditional
               outsourcing. We are a passionate team of experts dedicated to
@@ -152,7 +155,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="bg-[#0B3159] text-white py-16 px-4">
+      <section className="bg-[#AAB4C3] text-white py-16 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           {/* Image */}
           <div className="w-full">
@@ -165,11 +168,11 @@ const About = () => {
 
           {/* Text */}
           <div>
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 text-black">
               Accelerate your business with us!
             </h2>
-            <div className="w-20 h-1 bg-[#E5A24A] mb-6"></div>
-            <p className="text-gray-200 leading-relaxed text-base md:text-lg">
+            <div className="w-20 h-1 bg-black mb-6"></div>
+            <p className="text-black-200 leading-relaxed text-black md:text-lg">
               By partnering with <strong>ProTasks Solution</strong>, you gain
               more than just a corporate support system — you gain a friend, a
               motivator, a coach, and a trusted advisor. We stand by you every
@@ -195,7 +198,7 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-4">
               How ProTasks Solution Started
             </h2>
-            <div className="w-20 h-1 bg-[#E5A24A] mb-6"></div>
+            <div className="w-20 h-1 bg-white mb-6"></div>
             <p className="text-gray-200 leading-relaxed text-base md:text-lg">
               <strong>ProTasks Solution</strong> began with a simple yet
               powerful vision — to redefine outsourcing by blending efficiency
@@ -223,12 +226,12 @@ const About = () => {
       </section>
 
       {/* Founders Section */}
-      <section className="bg-[#0B3159] min-h-screen flex flex-col justify-center items-center px-4 py-12">
+      <section className="bg-[#AAB4C3] min-h-screen flex flex-col justify-center items-center px-4 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-4xl mt-6 font-bold text-white uppercase tracking-wide">
+          <h2 className="text-4xl mt-6 font-bold text-black uppercase tracking-wide">
             Meet Our Founders
           </h2>
-          <div className="w-20 h-1 bg-[#E5A24A] mx-auto mt-4"></div>
+          <div className="w-20 h-1 bg-black mx-auto mt-4"></div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center items-stretch gap-8 max-w-5xl w-full">
@@ -247,7 +250,7 @@ const About = () => {
                   <h3 className="text-2xl font-semibold uppercase">
                     {member.name}
                   </h3>
-                  <p className="text-[#E5A24A] font-medium mt-2">
+                  <p className="text-white font-medium mt-2">
                     {member.role}
                   </p>
                   <div className="border-t border-gray-400 my-4"></div>
@@ -262,7 +265,7 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="inline-block"
                   >
-                    <FaLinkedin className="text-white text-2xl hover:text-[#E5A24A] transition duration-300" />
+                    <FaLinkedin className="text-white text-2xl hover:text-white transition duration-300" />
                   </a>
                 </div>
               </div>
@@ -277,13 +280,13 @@ const About = () => {
           <h2 className="text-4xl font-bold text-center uppercase tracking-wide">
             Our Values
           </h2>
-          <div className="w-20 h-1 bg-[#E5A24A] mx-auto mt-4 mb-10"></div>
+          <div className="w-20 h-1 bg-white mx-auto mt-4 mb-10"></div>
 
           <div className="space-y-4">
             {/* Integrity */}
             <div className="bg-[#30557D] rounded-xl shadow-lg overflow-hidden">
               <details className="group">
-                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-[#E5A24A]">
+                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-white">
                   <span>Integrity</span>
                   <svg
                     className="w-5 h-5 transform group-open:rotate-180 transition-transform duration-300"
@@ -310,7 +313,7 @@ const About = () => {
             {/* Efficiency */}
             <div className="bg-[#30557D] rounded-xl shadow-lg overflow-hidden">
               <details className="group">
-                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-[#E5A24A]">
+                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-white">
                   <span>Efficiency</span>
                   <svg
                     className="w-5 h-5 transform group-open:rotate-180 transition-transform duration-300"
@@ -337,7 +340,7 @@ const About = () => {
             {/* Results-Oriented */}
             <div className="bg-[#30557D] rounded-xl shadow-lg overflow-hidden">
               <details className="group">
-                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-[#E5A24A]">
+                <summary className="flex justify-between items-center cursor-pointer px-6 py-4 text-lg font-semibold hover:text-white">
                   <span>Results-Oriented</span>
                   <svg
                     className="w-5 h-5 transform group-open:rotate-180 transition-transform duration-300"

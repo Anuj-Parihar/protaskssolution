@@ -102,6 +102,7 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import proTaskLogo from '../assets/logos/logo.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,16 +111,16 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-[#0B3159] shadow-md fixed w-full z-50">
+    <nav className="bg-[#ffffff] shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center text-xl font-bold text-white"
+            className="flex items-center text-xl font-bold text-[#0B3159]"
           >
             <img
-              src="https://tse2.mm.bing.net/th?id=OIP.P9WPxglozVLZsI2-dyXiTQHaDF&pid=Api&P=0&h=180"
+              src={proTaskLogo}
               alt="Logo"
               className="h-8 w-8 mr-2"
             />
@@ -136,8 +137,8 @@ const Header = () => {
                   to={path}
                   className={`transition duration-300 ${
                     isActive(path)
-                      ? "text-white font-semibold"
-                      : "text-[#E5A24A] hover:text-white"
+                      ? "text-[#0B3159] font-bold"
+                      : "text-black  hover:text-[#0B3159]"
                   }`}
                 >
                   {labels[idx]}

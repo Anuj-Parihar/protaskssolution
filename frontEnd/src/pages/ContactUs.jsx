@@ -449,7 +449,7 @@ const ContactUs = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white uppercase">
             Contact Us
           </h2>
-          <div className="w-16 h-1 bg-[#E5A24A] mx-auto mt-2"></div>
+          <div className="w-16 h-1 bg-[#ffffff] mx-auto mt-2"></div>
           <h2 className="text-3xl md:text-3xl font-semibold text-white pt-10">
             Let’s discuss how we can help grow your business through smart
             outsourcing.

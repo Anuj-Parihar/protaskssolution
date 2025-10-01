@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
         {/* About Us Section */}
         <div>
-          <h3 className="text-lg font-semibold text-[#E5A24A] border-l-2 border-[#E5A24A] pl-2">
+          <h3 className="text-lg font-semibold text-[#ffffff] border-l-2 border-[#ffffff] pl-2">
             ABOUT US
           </h3>
           <p className="mt-4 text-gray-400">
@@ -28,26 +28,25 @@ const Footer = () => {
 
         {/* Our Services Section */}
         <div>
-          <h3 className="text-lg font-semibold text-[#E5A24A] border-l-2 border-[#E5A24A] pl-2">
+          <h3 className="text-lg font-semibold text-[#ffffff] border-l-2 border-[#ffffff] pl-2">
             OUR SERVICES
           </h3>
           <ul className="mt-4 space-y-2 text-gray-400">
             <li>○ Business Process Services</li>
             <li>○ Recruitment Services</li>
-            <li>○ Virtual Assistant</li>
-            <li>○ Ecommerce Services</li>
+
           </ul>
         </div>
 
         {/* Contact Info Section */}
 
         <div>
-          <h3 className="text-lg font-semibold text-[#E5A24A] border-l-2 border-[#E5A24A] pl-2">
+          <h3 className="text-lg font-semibold text-[#ffffff] border-l-2 border-[#ffffff] pl-2">
             CONTACT INFO
           </h3>
           <div className="mt-4 space-y-3 text-gray-400">
             <p className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-[#E5A24A]" />
+              <FaMapMarkerAlt className="text-[#ffffff]" />
               <span>
                 <strong>Address:</strong>{" "}
                 <a
@@ -61,7 +60,7 @@ const Footer = () => {
               </span>
             </p>
             <p className="flex items-center gap-2">
-              <FaPhoneAlt className="text-[#E5A24A]" />
+              <FaPhoneAlt className="text-[#ffffff]" />
               <span>
                 <strong>Phone:</strong>{" "}
                 <a
@@ -80,7 +79,7 @@ const Footer = () => {
               </span>
             </p>
             <p className="flex items-center gap-2">
-              <FaEnvelope className="text-[#E5A24A]" />
+              <FaEnvelope className="text-[#ffffff]" />
               <span>
                 <strong>Email:</strong>{" "}
                 <a
@@ -96,7 +95,7 @@ const Footer = () => {
 
         {/* Follow Us Section */}
         <div>
-          <h3 className="text-lg font-semibold text-[#E5A24A] border-l-2 border-[#E5A24A] pl-2">
+          <h3 className="text-lg font-semibold text-[#ffffff] border-l-2 border-[#ffffff] pl-2">
             FOLLOW US
           </h3>
           <div className="flex space-x-4 mt-4">
