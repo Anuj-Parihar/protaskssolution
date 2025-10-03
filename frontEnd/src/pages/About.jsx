@@ -327,6 +327,7 @@
 
 
 import React, { useState } from "react";
+import nikhilPhoto from "..//assets/logos/NikhilPhoto.jpg"
 import {
   FaLinkedin,
   FaWhatsapp,
@@ -344,9 +345,7 @@ const teamMembers = [
     role: "Co-Founder",
     description:
       "With over 5+ years of experience, Nikhil co-founded ProTasks Solution to deliver innovative outsourcing solutions. His expertise is focused on improving operational efficiency, enhancing client productivity, and ensuring seamless service delivery.",
-    image:
-      "https://protaskssolution.com/wp-content/uploads/2024/10/OP-C-min-e1730285873985-2048x1634.png",
-    linkedin: "https://www.linkedin.com/in/nikhil-gehlot-171580202/",
+    image: nikhilPhoto,
   },
   {
     name: "Naved Hasan",

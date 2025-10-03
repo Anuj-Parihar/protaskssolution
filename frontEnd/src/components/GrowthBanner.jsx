@@ -39,7 +39,7 @@ const GrowthBanner = () => {
 
       {/* ✅ Use Link for internal navigation */}
       <Link
-        to="/services"
+        to="/contact"
         className="inline-flex items-center bg-gray-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-gray-700 transition"
       >
         Call to action
